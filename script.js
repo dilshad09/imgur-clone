@@ -15,7 +15,7 @@ arr.forEach((el, i) => {
   var gridDiv3 = document.getElementById("grid3");
   var gridDiv4 = document.getElementById("grid4");
 
-  if (el.cover.mime_type == "image/png") {
+  if (el.cover.mime_type == "image/png" || el.cover.mime_type == "image/jpeg") {
     var item = document.createElement("div");
     item.id = "galleryItem";
     item.innerHTML = imgItem(el);
