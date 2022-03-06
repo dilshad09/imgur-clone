@@ -6,7 +6,7 @@ var arr = data();
 
 console.log(arr);
 window.onscroll = () => {
-  console.log(scrollY);
+  // console.log(scrollY);
   if (scrollY >= 10) {
     document.getElementById("stickyFooter").style.display = "none";
   }
@@ -42,7 +42,9 @@ arr.forEach((el, i) => {
 
   // console.log(el.cover.mime_type);
   var idarr = [gridDiv1, gridDiv2, gridDiv3, gridDiv4];
-
+  item.onclick = () => {
+    console.log(el);
+  };
   idarr[i % 4].append(item);
 });
 
