@@ -235,6 +235,7 @@
 }
 #galleryImage {
   width: 100%;
+  max-height: 425px;
   border-top-left-radius: 5px;
   border-top-right-radius: 10px;
 }
