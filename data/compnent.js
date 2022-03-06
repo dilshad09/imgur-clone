@@ -1,7 +1,7 @@
 export const imgItem = (el) => {
   return ` <div id="galleryItemDiv">
   <div>
-      <img id="galleryImage" src="./images/c1.png" alt="">
+      <img id="galleryImage" src="${el.cover.url}" alt="">
   </div>
   <div>
       <div>
@@ -33,7 +33,7 @@ export const imgItem = (el) => {
 export const videoItem = (el) => {
   return `<div id="galleryItemDiv">
     <div>
-    <video width="240" autoplay loop muted>
+    <video id="galleryImage" width="240" autoplay loop muted>
     <source src="${el.cover.url}" type="video/mp4">
 </video>
     </div>
