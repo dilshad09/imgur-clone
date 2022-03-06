@@ -124,7 +124,11 @@ body {
 
 #tagContainer {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: center;
+  margin: auto;
+  gap: 2%;
+  flex: 3 1 1 1 1 1;
 }
 #tag1 div .tagname,
 #tag2 div .tagname,
@@ -138,8 +142,6 @@ body {
 }
 
 #tag1 {
-  width: 200px;
-  height: 120px;
   background-color: #1bb76e;
   text-align: center;
 }
@@ -150,8 +152,8 @@ body {
 #tag6,
 #tag7,
 #tag8 {
-  width: 100px;
-  height: 120px;
+  /* width: 100px;
+  height: 120px; */
   background-color: #1bb76e;
   text-align: center;
 }
