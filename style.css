@@ -130,7 +130,12 @@
   color: white;
 }
 
-#tag1,
+#tag1 {
+  width: 200px;
+  height: 120px;
+  background-color: #1bb76e;
+  text-align: center;
+}
 #tag2,
 #tag3,
 #tag4,
@@ -169,6 +174,8 @@
 #secondOp {
   display: flex;
   justify-content: space-between;
+  width: 80%;
+  margin: auto;
 }
 #secondOp div {
   display: flex;
@@ -256,4 +263,8 @@
 }
 section {
   background-color: #2e3035;
+}
+#tagMaindiv {
+  width: 90%;
+  margin: auto;
 }
