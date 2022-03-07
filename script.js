@@ -46,6 +46,7 @@ arr.forEach((el, i) => {
     console.log("dilARr", arr)
     localStorage.setItem("allData", JSON.stringify(arr))
     localStorage.setItem("data",JSON.stringify(el))
+    document.open("detailsPage.html")
   };
   idarr[i % 4].append(item);
 });
