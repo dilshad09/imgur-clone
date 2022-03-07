@@ -7,6 +7,10 @@
     <title>imgur</title>
     <script src="https://kit.fontawesome.com/6e3442f25c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="detailsPage.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Filled" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
 </head>
 <body>
     <!--  -->
@@ -65,17 +69,34 @@
 
     <script>
 
+        let data = JSON.parse(localStorage.getItem("data"))
+        let allData = JSON.parse(localStorage.getItem("allData"))
+        console.log("ahmad", data)
+        console.log(allData)
+        showData(data, allData)
+        function showData(data, allData){
         // left part
         let details_body = document.querySelector(".details-body")
         let title = document.createElement("h1")
         title.setAttribute("class", "title")
-        title.innerText = "Ukrainian UFC Fighter Maryna Moroz gives emotional speech after win"
+        title.innerText = data.title;
 
         let img_div = document.createElement("div");
         img_div.setAttribute("class", "img_div")
+        // if(data.mime_type == "video/mp4"){
+        //     // let video = document.createElement("video");
+        //     // let source = document.createElement("source");
+        //     // source.src = data.url;
+        //     // source.type = data.mime_type 
+        //     // video.append(source)
+        //     // img_div.append(video)
+        // }else{
+            
+        // }
         let img = document.createElement("img")
-        img.src = "https://nbpeakperformanceseminars.files.wordpress.com/2015/08/black-white-light.jpeg"
-        img_div.append(img)
+           img.src = data.display[0].url;
+           img_div.append(img)
+        
         
         let comment_div = document.createElement("div")
         comment_div.setAttribute("class", "comment_div")
@@ -84,21 +105,15 @@
 
         comment_div.append(textArea)
 
-
-
-
-
         details_body.append(title, img_div, comment_div)
         
-
-
         // right part 
 
         let most_viral_root = document.querySelector(".most-viral-root");
         let advertisement = document.createElement("div");
         advertisement.setAttribute("class", "add_div")
         let add_img = document.createElement("img");
-        add_img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC4TOyxuSiu3yO2-Ywf639M3C1bcStH_iOPVc1JwMwsMeqR8Lg1Vv26Lhb3-T9HMDPj3E&usqp=CAU"
+        add_img.src = "https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg"
         advertisement.append(add_img)
 
         let most_viral_title = document.createElement("h5")
@@ -112,19 +127,23 @@
         
         let most_viral_content = document.createElement("div");
         most_viral_content.setAttribute("class", "most_viral_content")
+    
         
-        let most_viral_img_div = document.createElement("div")
+        allData.map((most)=>{
+            let most_viral_img_div = document.createElement("div")
         let most_viral_img = document.createElement("img");
-        most_viral_img.src = "https://cdn1.vectorstock.com/i/1000x1000/13/35/romantic-couple-and-moonlit-night-vector-20381335.jpg"
+        display.length !=0 ? most_viral_img.src = most.display[0].url : most_viral_img.src = "https://www.w3schools.com/w3css/img_lights.jpg"
         most_viral_img_div.appendChild(most_viral_img )
 
         let most_viral_text_div =document.createElement("div")
         let most_viral_text = document.createElement("p");
-        most_viral_text.innerText = "Your thanks are mine!"
+        most_viral_text.innerText = most.title;
         most_viral_text_div.appendChild(most_viral_text)
-        
         most_viral_content.append(most_viral_img_div,most_viral_text_div)
+        })
+        
         most_viral_root.append(advertisement,most_viral_title,hr, most_viral_content)
+    }
     </script>
 </body>
 </html>
