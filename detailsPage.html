@@ -125,19 +125,19 @@
         most_viral_content.setAttribute("class", "most_viral_content")
     
         
-        // allData.map((most)=>{
+        allData.map((most)=>{
         
-        // let most_viral_img_div = document.createElement("div")
-        // let most_viral_img = document.createElement("img");
-        // most_viral_img.src = most.cover.url;
-        // most_viral_img_div.appendChild(most_viral_img )
+        let most_viral_img_div = document.createElement("div")
+        let most_viral_img = document.createElement("img");
+        most_viral_img.src = most.cover.url;
+        most_viral_img_div.appendChild(most_viral_img )
 
-        // let most_viral_text_div =document.createElement("div")
-        // let most_viral_text = document.createElement("p");
-        // most_viral_text.innerText = most.title;
-        // most_viral_text_div.appendChild(most_viral_text)
-        // most_viral_content.append(most_viral_img_div,most_viral_text_div)
-        // })
+        let most_viral_text_div =document.createElement("div")
+        let most_viral_text = document.createElement("p");
+        most_viral_text.innerText = most.title;
+        most_viral_text_div.appendChild(most_viral_text)
+        most_viral_content.append(most_viral_img_div,most_viral_text_div)
+        })
         
         most_viral_root.append(advertisement,most_viral_title,hr, most_viral_content)
     }
