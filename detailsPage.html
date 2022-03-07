@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imgur</title>
+    <script src="https://kit.fontawesome.com/6e3442f25c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="detailsPage.css">
+</head>
+<body>
+    <!--  -->
+    <div id="header">
+        <div id="nav">
+            <div>
+                <div>
+                    <img id="logo" src="http://assets.stickpng.com/images/5842a969a6515b1e0ad75b05.png" alt="" />
+                </div>
+                <div>
+                    <button id="logobtn">
+                        <img src="https://s.imgur.com/desktop-assets/desktop-assets/icon-new-post.13ab64f9f36ad8f25ae3544b350e2ae1.svg"
+                            alt="" />
+                        <p style="margin-left: 1vw; color: white">New post</p>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div id="inputdiv">
+                    <input type="text" placeholder="Images, #tags, @users oh my!" />
+
+                    <button>
+                        <span class="material-icons-outlined"> search </span>
+                    </button>
+                </div>
+            </div>
+            <div id="navLoginDiv">
+                <button class="offerbtn">
+                    <span class="material-icons-outlined"> circle </span>
+                </button>
+
+                <button class="navAdbtn">Go Ad-Free</button>
+                <button class="navSignin">Sign in</button>
+                <button class="navloginbtn">Sign up</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--  -->
+    <!-- <div class="vote-div-main">
+        <div ><i class="fa-thin fa-up"></i></div>
+        <div></div>
+        <div ><i class="fa-thin fa-down"></i></div>
+        <div ><i class="fa-thin fa-heart"></i></div>
+    </div> -->
+    <div id="details-root">
+        <div class="details-body">
+            
+        </div>
+        <div class="most-viral-root">
+
+        </div>
+    </div>
+
+    <script>
+
+        // left part
+        let details_body = document.querySelector(".details-body")
+        let title = document.createElement("h1")
+        title.setAttribute("class", "title")
+        title.innerText = "Ukrainian UFC Fighter Maryna Moroz gives emotional speech after win"
+
+        let img_div = document.createElement("div");
+        img_div.setAttribute("class", "img_div")
+        let img = document.createElement("img")
+        img.src = "https://nbpeakperformanceseminars.files.wordpress.com/2015/08/black-white-light.jpeg"
+        img_div.append(img)
+        
+        let comment_div = document.createElement("div")
+        comment_div.setAttribute("class", "comment_div")
+        let textArea = document.createElement("textarea")
+        textArea.placeholder = "write a comment"
+
+        comment_div.append(textArea)
+
+
+
+
+
+        details_body.append(title, img_div, comment_div)
+        
+
+
+        // right part 
+
+        let most_viral_root = document.querySelector(".most-viral-root");
+        let advertisement = document.createElement("div");
+        advertisement.setAttribute("class", "add_div")
+        let add_img = document.createElement("img");
+        add_img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC4TOyxuSiu3yO2-Ywf639M3C1bcStH_iOPVc1JwMwsMeqR8Lg1Vv26Lhb3-T9HMDPj3E&usqp=CAU"
+        advertisement.append(add_img)
+
+        let most_viral_title = document.createElement("h5")
+
+        most_viral_title.innerText = "NEWEST IN MOST VIRAL"
+
+        let hr = document.createElement("hr");
+
+        let most_viral_body = document.createElement("div");
+        most_viral_body.setAttribute("class", "most_viral_body")
+        
+        let most_viral_content = document.createElement("div");
+        most_viral_content.setAttribute("class", "most_viral_content")
+        
+        let most_viral_img_div = document.createElement("div")
+        let most_viral_img = document.createElement("img");
+        most_viral_img.src = "https://cdn1.vectorstock.com/i/1000x1000/13/35/romantic-couple-and-moonlit-night-vector-20381335.jpg"
+        most_viral_img_div.appendChild(most_viral_img )
+
+        let most_viral_text_div =document.createElement("div")
+        let most_viral_text = document.createElement("p");
+        most_viral_text.innerText = "Your thanks are mine!"
+        most_viral_text_div.appendChild(most_viral_text)
+        
+        most_viral_content.append(most_viral_img_div,most_viral_text_div)
+        most_viral_root.append(advertisement,most_viral_title,hr, most_viral_content)
+    </script>
+</body>
+</html>

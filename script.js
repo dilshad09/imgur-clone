@@ -3,8 +3,6 @@ import { imgItem } from "./data/compnent.js";
 
 var arr = data();
 
-console.log(arr);
-
 arr.forEach((el, i) => {
   //   console.log(i);
   const galleryDiv = document.getElementById("galleryDiv");
@@ -13,7 +11,7 @@ arr.forEach((el, i) => {
   var gridDiv2 = document.getElementById("grid2");
   var gridDiv3 = document.getElementById("grid3");
   var gridDiv4 = document.getElementById("grid4");
-
+  console.log("dils", el)
   var item = document.createElement("div");
   item.id = "galleryItem";
   item.innerHTML = imgItem(el);
