@@ -48,9 +48,6 @@
             </div>
         </div>
     </div>
-
-
-
     <!--  -->
     <!-- <div class="vote-div-main">
         <div ><i class="fa-thin fa-up"></i></div>
@@ -68,10 +65,12 @@
     </div>
 
     <script>
-
+        
+        import {video} from "./detailsComp.js"
+        console.log("vido", video)
         let data = JSON.parse(localStorage.getItem("data"))
         let allData = JSON.parse(localStorage.getItem("allData"))
-        console.log("ahmad", data)
+        console.log("ahmad", data.cover.url)
         console.log(allData)
         showData(data, allData)
         function showData(data, allData){
@@ -83,21 +82,18 @@
 
         let img_div = document.createElement("div");
         img_div.setAttribute("class", "img_div")
-        // if(data.mime_type == "video/mp4"){
-        //     // let video = document.createElement("video");
-        //     // let source = document.createElement("source");
-        //     // source.src = data.url;
-        //     // source.type = data.mime_type 
-        //     // video.append(source)
-        //     // img_div.append(video)
-        // }else{
-            
-        // }
-        let img = document.createElement("img")
-           img.src = data.display[0].url;
+        if(data.cover.mime_type == "video/mp4"){
+            console.log("dilshad")
+            video(data.cover.url)
+        }else{
+            console.log("Ahmad")
+            let img = document.createElement("img")
+           img.src = data.cover.url;
            img_div.append(img)
         
+        }
         
+        console.log("hi",img_div)
         let comment_div = document.createElement("div")
         comment_div.setAttribute("class", "comment_div")
         let textArea = document.createElement("textarea")
@@ -129,18 +125,19 @@
         most_viral_content.setAttribute("class", "most_viral_content")
     
         
-        allData.map((most)=>{
-            let most_viral_img_div = document.createElement("div")
-        let most_viral_img = document.createElement("img");
-        display.length !=0 ? most_viral_img.src = most.display[0].url : most_viral_img.src = "https://www.w3schools.com/w3css/img_lights.jpg"
-        most_viral_img_div.appendChild(most_viral_img )
+        // allData.map((most)=>{
+        
+        // let most_viral_img_div = document.createElement("div")
+        // let most_viral_img = document.createElement("img");
+        // most_viral_img.src = most.cover.url;
+        // most_viral_img_div.appendChild(most_viral_img )
 
-        let most_viral_text_div =document.createElement("div")
-        let most_viral_text = document.createElement("p");
-        most_viral_text.innerText = most.title;
-        most_viral_text_div.appendChild(most_viral_text)
-        most_viral_content.append(most_viral_img_div,most_viral_text_div)
-        })
+        // let most_viral_text_div =document.createElement("div")
+        // let most_viral_text = document.createElement("p");
+        // most_viral_text.innerText = most.title;
+        // most_viral_text_div.appendChild(most_viral_text)
+        // most_viral_content.append(most_viral_img_div,most_viral_text_div)
+        // })
         
         most_viral_root.append(advertisement,most_viral_title,hr, most_viral_content)
     }
